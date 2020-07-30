@@ -887,29 +887,12 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
                 })}
             </G>
             <G>
-              {withVerticalLines &&
-                (withInnerLines
-                  ? this.renderVerticalLines({
-                      ...config,
-                      data: data.datasets[0].data,
-                      paddingTop: paddingTop as number,
-                      paddingRight: paddingRight as number
-                    })
-                  : withOuterLines
-                  ? this.renderVerticalLine({
-                      ...config,
-                      paddingTop: paddingTop as number,
-                      paddingRight: paddingRight as number
-                    })
-                  : null)}
-            </G>
-            <G>
               {withVerticalLabels &&
                 this.renderVerticalLabels({
                   ...config,
                   labels,
                   paddingTop: paddingTop as number,
-                  paddingRight: paddingRight as number,
+                  paddingRight: paddingRight as number + 15,
                   formatXLabel
                 })}
             </G>
@@ -917,7 +900,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
               {this.renderLine({
                 ...config,
                 ...chartConfig,
-                paddingRight: paddingRight as number,
+                paddingRight: paddingRight as number + 15,
                 paddingTop: paddingTop as number,
                 data: data.datasets
               })}
